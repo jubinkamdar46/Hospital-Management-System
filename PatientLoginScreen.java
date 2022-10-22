@@ -12,16 +12,18 @@ import javax.swing.JOptionPane;
  * @author Aayush
  */
 public class PatientLoginScreen extends javax.swing.JFrame {
-
     /**
      * Creates new form patientLoginScreen
      */
     //PatientRegistrationScreen prs = new PatientRegistrationScreen();
     PatientRegistrationScreen prs = new PatientRegistrationScreen();
-
+    
+    public static String pEmail="";
+    public static int pID;
     public PatientLoginScreen() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
     }
 
     /**
@@ -206,9 +208,12 @@ public class PatientLoginScreen extends javax.swing.JFrame {
                     patientFound = false;
                 }
             }
-               System.out.println(patientFound);
             if(patientFound){
                 JOptionPane.showMessageDialog(this, "Login Successfull");
+                pEmail= patientEmailTextField.getText();
+                pID =Integer.parseInt(patientIdTextField.getText());
+                PatientMainScreen pm = new PatientMainScreen();
+                pm.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(this, "Enter correct Credentials");
             }

@@ -113,9 +113,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="registerButton" min="-2" pref="114" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="displayPatients" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="400" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -163,10 +161,7 @@
                       <Component id="passwordTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="registerButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="displayPatients" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="registerButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="51" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -270,14 +265,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="ageTextField">
-        </Component>
-        <Component class="javax.swing.JButton" name="displayPatients">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="View Records"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayPatientsActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

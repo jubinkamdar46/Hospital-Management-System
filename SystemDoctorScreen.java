@@ -491,7 +491,9 @@ public class SystemDoctorScreen extends javax.swing.JFrame {
             doctorNameText.setText("");
             doctorEmailText.setText("");
             doctorContactText.setText("");
-            doctorPasswordField.setText("");  
+            doctorPasswordField.setText("");
+            PatientRegistrationScreen pr = new PatientRegistrationScreen();
+            pr.setVisible(true);
     
         }
         }
@@ -519,6 +521,7 @@ public class SystemDoctorScreen extends javax.swing.JFrame {
                     DoctorDirectory.arrayReturn().remove(doctor);
                     JOptionPane.showMessageDialog(this, "Doctor Deleted Successfully", "Warning",
                     JOptionPane.ERROR_MESSAGE);
+                    doctorIDText.setText(String.valueOf(DoctorDirectory.arrayListLength()));
                     break;
                 }
             }

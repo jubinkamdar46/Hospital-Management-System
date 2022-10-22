@@ -189,7 +189,7 @@ public class DoctorLoginScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter valid Email", "Warning", JOptionPane.ERROR_MESSAGE);
         }
         else{
-            for(Doctor doctor: doctorDirectory){
+            for(Doctor doctor: docdetail){
                 
                if (doctor.email.equals(demail) && doctor.password.equals(dpass)) {
                     loginUser = true;

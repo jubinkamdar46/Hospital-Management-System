@@ -52,7 +52,6 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         passwordTextField = new javax.swing.JPasswordField();
         ageTextField = new javax.swing.JTextField();
-        displayPatients = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,13 +115,6 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
             }
         });
 
-        displayPatients.setText("View Records");
-        displayPatients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                displayPatientsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -174,9 +166,7 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(displayPatients)
-                .addGap(246, 246, 246))
+                .addGap(400, 400, 400))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,9 +204,7 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(registerButton)
-                    .addComponent(displayPatients))
+                .addComponent(registerButton)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -304,7 +292,7 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
         } else {
             //when all conditions are false
             int patientAgeC = Integer.parseInt(patientAge);
-            PatientDirectory.addArrayListItem(PatientDirectory.arrayListLength()+1, patientName, patientEmail, patientContact, patientGender, patientAgeC, patientCommunity, patientPassword);
+            PatientDirectory.addArrayListItem(PatientDirectory.arrayListLength(), patientName, patientEmail, patientContact, patientGender, patientAgeC, patientCommunity, patientPassword);
 
             PatientLoginScreen pls = new PatientLoginScreen();
             pls.setVisible(true);
@@ -328,20 +316,6 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
     private void fullNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullNameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fullNameTextFieldActionPerformed
-
-    private void displayPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayPatientsActionPerformed
-        // TODO add your handling code here:
-
-//        for (Patients patient : PatientDirectory.patientDirectory) {
-//            System.out.println(patient.id);
-//            System.out.println(patient.name);
-//            System.out.println(patient.age);
-//            System.out.println(patient.gender);
-//            System.out.println(patient.community);
-//            System.out.println(patient.password);
-//            System.out.println("***************************");
-//        }
-    }//GEN-LAST:event_displayPatientsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,7 +357,6 @@ public class PatientRegistrationScreen extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField communityTextField;
     private javax.swing.JTextField contactTextField;
-    private javax.swing.JButton displayPatients;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JRadioButton femaleRadioButton;
     private javax.swing.JTextField fullNameTextField;

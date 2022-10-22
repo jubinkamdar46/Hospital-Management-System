@@ -1,4 +1,3 @@
-
 public class Patients {
     int id;
     String name;
@@ -19,5 +18,4 @@ public class Patients {
         this.community = community;
         this.password = password;
     }
-    
 }
