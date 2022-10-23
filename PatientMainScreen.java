@@ -39,6 +39,11 @@ public class PatientMainScreen extends javax.swing.JFrame {
         });
 
         jButton2.setText("My Reports");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,6 +88,16 @@ public class PatientMainScreen extends javax.swing.JFrame {
         pa.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_AppointmentsButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //testing
+        ReportDirectory.addArrayItem(1, "Jubin", "jubin@gmail.com", 1, "Fever", "High Fever", "Covid symptoms");
+        
+        PatientAppointmentList pal = new PatientAppointmentList();
+        pal.setVisible(true);
+        pal.loadTable();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

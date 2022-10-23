@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -28,7 +32,7 @@ public class DoctorMainScreen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DoctorAppointmentsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +46,12 @@ public class DoctorMainScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("My Appointments");
+        DoctorAppointmentsButton.setText("My Appointments");
+        DoctorAppointmentsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorAppointmentsButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -52,13 +61,10 @@ public class DoctorMainScreen extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jButton1)
-                .addGap(31, 31, 31)
-                .addComponent(jButton2)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addComponent(DoctorAppointmentsButton)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
-
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -67,11 +73,9 @@ public class DoctorMainScreen extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(DoctorAppointmentsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(145, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +100,16 @@ public class DoctorMainScreen extends javax.swing.JFrame {
         dds.setVisible(true);
         //super.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void DoctorAppointmentsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorAppointmentsButtonActionPerformed
+        // TODO add your handling code here:
+        AppointmentDirectory.addArrayListItem(1, 2, "jash", "jash@gmail.com", "jubin", "headache", "09/09/2022", "6:15AM");
+        DoctorMainScreen dms = new DoctorMainScreen();
+        DoctorAppointmentScreen das = new DoctorAppointmentScreen();
+        das.tableLoad();
+        dms.setVisible(false);
+        das.setVisible(true);
+    }//GEN-LAST:event_DoctorAppointmentsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +148,8 @@ public class DoctorMainScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DoctorAppointmentsButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
